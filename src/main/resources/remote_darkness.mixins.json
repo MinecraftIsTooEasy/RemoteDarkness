@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "vbonedra.remote_darkness.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "target": "DEFAULT",
+  "mixins": [
+    "EntityRendererMixin",
+    "WorldProviderHellMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
