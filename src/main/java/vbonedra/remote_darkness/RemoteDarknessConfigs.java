@@ -14,7 +14,11 @@ import static vbonedra.remote_darkness.RemoteDarknessMod.MOD_NAME;
 
 public class RemoteDarknessConfigs extends SimpleConfigs {
     public static final ConfigBoolean EnableTrueDarkness = new ConfigBoolean("True Darkness", true, "Makes 0 light pitch black.");
-    public static final ConfigBoolean EnableDarkNether = new ConfigBoolean("Dark Nether", true, "No environment light in The Nether. Rejoin world or server to apply changes.");
+    public static final ConfigBoolean OverrideNetherLightmap = new ConfigBoolean("Dark Nether", true, "No environment light in The Nether.");
+    public static final ConfigBoolean RemoveEndMinValues = new ConfigBoolean("Dark End", true, "No environment light in The End.");
+    public static final ConfigBoolean EnableDarkDimensions = new ConfigBoolean("Dark Dimension", true,
+            "Overrides light tables, \"" + OverrideNetherLightmap.getName() + "\" and \"" + RemoveEndMinValues.getName() + "\" wont work without it.\n\""
+                    + EnableTrueDarkness.getName() + "\" must be true for changes to be applied.");
 
     private static final RemoteDarknessConfigs Instance;
     public static final List<ConfigBase<?>> CosmeticOptions;
@@ -32,7 +36,9 @@ public class RemoteDarknessConfigs extends SimpleConfigs {
     static {
         CosmeticOptions = List.of(
                 EnableTrueDarkness,
-                EnableDarkNether
+                EnableDarkDimensions,
+                OverrideNetherLightmap,
+                RemoveEndMinValues
         );
 
         Total.addAll(CosmeticOptions);

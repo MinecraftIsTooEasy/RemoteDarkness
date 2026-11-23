@@ -4,8 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "target": "DEFAULT",
   "mixins": [
-    "EntityRendererMixin",
-    "WorldProviderHellMixin"
+    "EntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
