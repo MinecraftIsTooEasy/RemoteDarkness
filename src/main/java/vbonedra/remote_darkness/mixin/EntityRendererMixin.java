@@ -66,7 +66,7 @@ public abstract class EntityRendererMixin {
     }
 
     @Inject(method = "updateLightmap", at = @At("HEAD"), cancellable = true)
-    private void remoteDarkness$updateLightmap(float partialTick, CallbackInfo ci) {
+    private void updateLightmap(float partialTick, CallbackInfo ci) {
         if (!RemoteDarknessConfigs.EnableTrueDarkness.getBooleanValue()) {
             return;
         }
